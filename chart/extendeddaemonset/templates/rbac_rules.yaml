@@ -19,6 +19,14 @@
     - get
     - watch
 - apiGroups:
+    - "apps"
+  resources:
+    - daemonset
+  verbs:
+    - get
+    - watch
+    - list
+- apiGroups:
     - datadoghq.com
   resources:
     - 'extendeddaemonsets'
