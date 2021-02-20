@@ -1,0 +1,32 @@
+{{- define "extendeddaemonset.rbacRules" }}
+- apiGroups:
+    - ""
+  resources:
+    - events
+  verbs:
+    - create
+- apiGroups:
+    - ""
+  resources:
+    - pods
+  verbs:
+    - '*'
+- apiGroups:
+    - ""
+  resources:
+    - services
+  verbs:
+    - get
+    - watch
+- apiGroups:
+    - datadoghq.com
+  resources:
+    - 'extendeddaemonsets'
+    - 'extendeddaemonsets/status'
+    - 'extendeddaemonsetreplicasets'
+    - 'extendeddaemonsetreplicasets/status'
+    - 'extendeddaemonsetsettings'
+    - 'extendeddaemonsetsettings/status'
+  verbs:
+    - '*'
+{{- end }}

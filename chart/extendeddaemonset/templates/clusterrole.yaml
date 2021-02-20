@@ -14,4 +14,7 @@ rules:
   - get
   - watch
   - list
+{{- if .Values.clusterScope }}
+{{- include "extendeddaemonset.rbacRules" }}
+{{- end }}
 {{- end -}}

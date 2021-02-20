@@ -7,49 +7,22 @@ metadata:
 {{ include "extendeddaemonset.labels" . | indent 4 }}
 rules:
 - apiGroups:
-  - ""
+    - ""
   resources:
-  - events
+    - configmaps
   verbs:
-  - create
+    - create
 - apiGroups:
-  - ""
+    - ""
   resources:
-  - pods
-  verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - configmaps
-  verbs:
-  - create
-- apiGroups:
-  - ""
-  resources:
-  - configmaps
+    - configmaps
   resourceNames:
-  - extendeddaemonset-lock
+    - extendeddaemonset-lock
   verbs:
-  - update
-  - get
-  - watch
-- apiGroups:
-  - ""
-  resources:
-  - services
-  verbs:
-  - get
-  - watch
-- apiGroups:
-  - datadoghq.com
-  resources:
-  - 'extendeddaemonsets'
-  - 'extendeddaemonsets/status'
-  - 'extendeddaemonsetreplicasets'
-  - 'extendeddaemonsetreplicasets/status'
-  - 'extendeddaemonsetsettings'
-  - 'extendeddaemonsetsettings/status'
-  verbs:
-  - '*'
+    - update
+    - get
+    - watch
+{{- if not .Values.clusterScope }}
+{{- include "extendeddaemonset.rbacRules" }}
+{{- end }}
 {{- end -}}
