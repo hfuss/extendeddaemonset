@@ -23,6 +23,6 @@ rules:
     - get
     - watch
 {{- if not .Values.clusterScope }}
-{{- include "extendeddaemonset.rbacRules" }}
+{{- include "extendeddaemonset.rbacRules" . }}
 {{- end }}
 {{- end -}}
