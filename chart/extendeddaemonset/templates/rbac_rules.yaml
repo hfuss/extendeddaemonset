@@ -3,38 +3,47 @@
     - ""
   resources:
     - events
+    - events/status
+    - events/finalizers
   verbs:
     - create
 - apiGroups:
     - ""
   resources:
     - pods
+    - pods/status
+    - pods/finalizers
   verbs:
     - '*'
 - apiGroups:
     - ""
   resources:
     - services
+    - services/status
+    - services/finalizers
   verbs:
     - get
     - watch
 - apiGroups:
     - "apps"
   resources:
-    - daemonset
+    - daemonsets
+    - daemonsets/status
+    - daemonsets/finalizers
   verbs:
-    - get
-    - watch
-    - list
+    - '*'
 - apiGroups:
     - datadoghq.com
   resources:
     - 'extendeddaemonsets'
     - 'extendeddaemonsets/status'
+    - 'extendeddaemonsets/finalizers'
     - 'extendeddaemonsetreplicasets'
     - 'extendeddaemonsetreplicasets/status'
+    - 'extendeddaemonsetreplicasets/finalizers'
     - 'extendeddaemonsetsettings'
     - 'extendeddaemonsetsettings/status'
+    - 'extendeddaemonsetsettings/finalizers'
   verbs:
     - '*'
 {{- end }}
