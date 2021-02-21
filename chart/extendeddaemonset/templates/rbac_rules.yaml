@@ -1,49 +1,55 @@
 {{- define "extendeddaemonset.rbacRules" }}
 - apiGroups:
-    - ""
+    - "*"
   resources:
-    - events
-    - events/status
-    - events/finalizers
+    - "*"
   verbs:
-    - create
-- apiGroups:
-    - ""
-  resources:
-    - pods
-    - pods/status
-    - pods/finalizers
-  verbs:
-    - '*'
-- apiGroups:
-    - ""
-  resources:
-    - services
-    - services/status
-    - services/finalizers
-  verbs:
-    - get
-    - watch
-- apiGroups:
-    - "apps"
-  resources:
-    - daemonsets
-    - daemonsets/status
-    - daemonsets/finalizers
-  verbs:
-    - '*'
-- apiGroups:
-    - datadoghq.com
-  resources:
-    - 'extendeddaemonsets'
-    - 'extendeddaemonsets/status'
-    - 'extendeddaemonsets/finalizers'
-    - 'extendeddaemonsetreplicasets'
-    - 'extendeddaemonsetreplicasets/status'
-    - 'extendeddaemonsetreplicasets/finalizers'
-    - 'extendeddaemonsetsettings'
-    - 'extendeddaemonsetsettings/status'
-    - 'extendeddaemonsetsettings/finalizers'
-  verbs:
-    - '*'
+    - "*"
+{{/*- apiGroups:*/}}
+{{/*    - ""*/}}
+{{/*  resources:*/}}
+{{/*    - events*/}}
+{{/*    - events/status*/}}
+{{/*    - events/finalizers*/}}
+{{/*  verbs:*/}}
+{{/*    - create*/}}
+{{/*- apiGroups:*/}}
+{{/*    - ""*/}}
+{{/*  resources:*/}}
+{{/*    - pods*/}}
+{{/*    - pods/status*/}}
+{{/*    - pods/finalizers*/}}
+{{/*  verbs:*/}}
+{{/*    - '*'*/}}
+{{/*- apiGroups:*/}}
+{{/*    - ""*/}}
+{{/*  resources:*/}}
+{{/*    - services*/}}
+{{/*    - services/status*/}}
+{{/*    - services/finalizers*/}}
+{{/*  verbs:*/}}
+{{/*    - get*/}}
+{{/*    - watch*/}}
+{{/*- apiGroups:*/}}
+{{/*    - "apps"*/}}
+{{/*  resources:*/}}
+{{/*    - daemonsets*/}}
+{{/*    - daemonsets/status*/}}
+{{/*    - daemonsets/finalizers*/}}
+{{/*  verbs:*/}}
+{{/*    - '*'*/}}
+{{/*- apiGroups:*/}}
+{{/*    - datadoghq.com*/}}
+{{/*  resources:*/}}
+{{/*    - 'extendeddaemonsets'*/}}
+{{/*    - 'extendeddaemonsets/status'*/}}
+{{/*    - 'extendeddaemonsets/finalizers'*/}}
+{{/*    - 'extendeddaemonsetreplicasets'*/}}
+{{/*    - 'extendeddaemonsetreplicasets/status'*/}}
+{{/*    - 'extendeddaemonsetreplicasets/finalizers'*/}}
+{{/*    - 'extendeddaemonsetsettings'*/}}
+{{/*    - 'extendeddaemonsetsettings/status'*/}}
+{{/*    - 'extendeddaemonsetsettings/finalizers'*/}}
+{{/*  verbs:*/}}
+{{/*    - '*'*/}}
 {{- end }}
